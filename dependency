@@ -1,0 +1,10 @@
+//install  these
+truffle
+web3
+genache-cli
+
+//chrome/firfox extension
+Metamask
+
+//run commands
+truffle compile
