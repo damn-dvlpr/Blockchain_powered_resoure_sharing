@@ -217,7 +217,7 @@ export default function Order(props) {
                 <AppBar position="absolute" color="default" className={classes.appBar}>
                     <Toolbar>
                     <Typography variant="h6" color="inherit" noWrap>
-                        DRentforcement
+                        D-App
                     </Typography>
                     </Toolbar>
                 </AppBar>

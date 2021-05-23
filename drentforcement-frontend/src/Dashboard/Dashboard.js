@@ -311,7 +311,7 @@ function Dashboard(props) {
         <AppBar position="relative">
             <Toolbar>
                 <Typography variant="h6" color="inherit" noWrap>
-                    D-Rentforcement
+                    D-App
                 </Typography>
             </Toolbar>
         </AppBar>
@@ -320,7 +320,7 @@ function Dashboard(props) {
     const Body = (
         <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                D-Rentforcement
+                D-App
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 A Decentralized C2C Renting Platform!

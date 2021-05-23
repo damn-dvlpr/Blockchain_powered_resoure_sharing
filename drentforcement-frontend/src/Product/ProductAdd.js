@@ -15,6 +15,8 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import bg from "../ContractLaw.jpg"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Web3 from 'web3';
 import { ContractAddress, abi } from '../contractArtifacts';
@@ -138,7 +140,7 @@ function ProductAdd(props) {
                     if (provider !== window.ethereum) {
                         // this.setState({ isValid: false })
                         setIsValid(false);
-                        alert('Multiple wallets are installed!');
+                        toast('Multiple wallets are installed!');
                         return;
     
                     } else {
@@ -332,6 +334,8 @@ function ProductAdd(props) {
 
     const onProductAdd = async () => {
 
+        toast.success('Product Added Successfully')
+
         console.log("details saved!")
         console.log(productName)
         console.log(productDesc)
@@ -424,6 +428,7 @@ function ProductAdd(props) {
             >
                 Save
             </Button>
+            <ToastContainer autoClose={8000} />
         </Grid>
         </React.Fragment>
     )
@@ -438,7 +443,7 @@ function ProductAdd(props) {
                         <AppBar position="absolute" color="default" className={classes.appBar}>
                             <Toolbar>
                             <Typography variant="h6" color="inherit" noWrap>
-                                DRentforcement
+                                D-App
                             </Typography>
                             </Toolbar>
                         </AppBar>
@@ -447,7 +452,7 @@ function ProductAdd(props) {
                         <main className={classes.layout}>
                             <Paper className={classes.paper}>
                                 <Typography component="h1" variant="h4" align="center">
-                                    Rent Rentforcement Contract
+                                    Dapp Renting Contract
                                 </Typography>
 
                                 <Typography component="h1" variant="h6" align="center">
