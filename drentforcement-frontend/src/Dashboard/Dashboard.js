@@ -4,7 +4,7 @@ import Web3 from 'web3';
 import { Redirect, Link as RouterLink } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import detectEthereumProvider from '@metamask/detect-provider';
-
+import { Box } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -19,11 +19,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
+
 // import { Redirect } from 'react-router-dom';
 
 // local imports
 import { ContractAddress, abi } from '../contractArtifacts';
 import './Dashboard.css';
+import mystyles from './Gradient.module.css';
+import MainSvg from './MainSvg';
 
 // local variables
 var sigUtil = require('eth-sig-util')
@@ -63,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     heroContent: {
-        backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(8, 0, 6),
     },
     heroButtons: {
@@ -90,7 +92,14 @@ const useStyles = makeStyles((theme) => ({
     },
     buttons: {
         alignItems: 'center',
-    }
+    },
+    container : {
+        height: '100vh',
+        width : '100vw',
+        // display: 'flex',
+        // // justifyContent : 'center',
+        // alignItems : 'center',
+       }
 }));
 
 function Dashboard(props) {
@@ -308,9 +317,9 @@ function Dashboard(props) {
     }
 
     const TopBar = (
-        <AppBar position="relative">
+        <AppBar color='primary' position="relative">
             <Toolbar>
-                <Typography variant="h6" color="inherit" noWrap>
+                <Typography variant="h5" color="inherit" noWrap>
                     D-App
                 </Typography>
             </Toolbar>
@@ -325,11 +334,13 @@ function Dashboard(props) {
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 A Decentralized C2C Renting Platform!
             </Typography>
-
-
         </Container>
     )
-
+    const mySvg = (
+        <Box position='relative' marginTop="20px">
+            <MainSvg  ></MainSvg>
+        </Box>
+    )
     if (isMetamaskInstalled) {
         if (isValid) {
             if (isAuth && isUserProfileComplete) {
@@ -337,10 +348,9 @@ function Dashboard(props) {
                     <React.Fragment>
                     <CssBaseline />
                     {TopBar}
-                    <main>
+                    <Box className={`${classes.container}`} >
                         <div className={classes.heroContent}>
                             {Body}
-
                             <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify="center">
                                 <Grid item>
@@ -359,6 +369,7 @@ function Dashboard(props) {
                                 </Grid>
                             </Grid>
                             </div>
+                            {mySvg}
 
                         </div>
                         <Container className={classes.cardGrid} maxWidth="md">
@@ -403,7 +414,8 @@ function Dashboard(props) {
                         ))}        
                         </Grid>
                         </Container>
-                    </main>
+                    </Box>
+                    
                     </React.Fragment>
                 )
 
@@ -431,6 +443,7 @@ function Dashboard(props) {
         )
 
     }
+
 
 }
 
