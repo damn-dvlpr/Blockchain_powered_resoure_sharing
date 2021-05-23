@@ -9,3 +9,7 @@
 .h3{
     color: #282c34;
 }
+.btn {
+    border-radius: 10px;
+    width: 100%;
+}

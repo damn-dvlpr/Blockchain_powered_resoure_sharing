@@ -14,6 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
+import bg from "../ContractLaw.jpg"
 
 import Web3 from 'web3';
 import { ContractAddress, abi } from '../contractArtifacts';
@@ -268,7 +269,6 @@ function ProductAdd(props) {
         if (rentforcementContract) {
 
             try {
-
                 const price = productPrice;
                 var priceInWei = (web3.utils.toWei(price, 'ether'));
                 const numOfDays = (productNumberOfDays) ;
@@ -397,12 +397,12 @@ function ProductAdd(props) {
             </Grid>
 
             <Grid item xs={12} sm={6}>
-                <div style={{'paddingTop': '1cm'}}>
+                <div style={{'paddingTop': '0.5cm'}}>
                     Choose an image of product
                 </div>
             </Grid>
             <Grid item xs={12} sm={6}>
-                <div style={{'paddingTop': '1cm'}}>
+                <div style={{'paddingTop': '0.5cm'}}>
                 <input
                         type="file"
                         onChange={(e) => {uploadImage(e);}}
@@ -419,6 +419,8 @@ function ProductAdd(props) {
                 color="primary"
                 className={classes.submit}
                 onClick={onProductAdd}
+                class="btn btn-primary"
+                style={{'marginTop': '0.7cm'}}
             >
                 Save
             </Button>
@@ -445,7 +447,7 @@ function ProductAdd(props) {
                         <main className={classes.layout}>
                             <Paper className={classes.paper}>
                                 <Typography component="h1" variant="h4" align="center">
-                                    Rent @ rentforcementContract
+                                    Rent Rentforcement Contract
                                 </Typography>
 
                                 <Typography component="h1" variant="h6" align="center">
@@ -463,16 +465,16 @@ function ProductAdd(props) {
 
                         <React.Fragment>
                             <Container maxWidth="sm">
-                            <div className={classes.heroContent}>
-                                <div className={classes.heroButtons}>
                                 <Grid container spacing={2} justify="center">
                                     <Grid item>
                                         <RouterLink to='/'>
                                         <Button 
+                                            class="btn btn-primary"
                                             variant="outlined"
                                             color="primary"
                                             component={RouterLink}
                                             to={'/'}
+                                            style={{"width": "120%"}}
                                         >
                                             Go to Dashboard
                                         </Button>
@@ -491,8 +493,6 @@ function ProductAdd(props) {
                                         </RouterLink>
                                     </Grid> */}
                                 </Grid>
-                                </div>
-                            </div>
                             </Container>
                         </React.Fragment>
 
